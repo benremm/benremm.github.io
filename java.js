@@ -10,6 +10,8 @@ function stackBtn() {
 
     holder.style.height = (amount * 30 + 10) + "px";
     var itemBtn = document.createElement("button");
+    itemBtn.style.position = "relative";
+    itemBtn.style.top = "1.5px"
     itemBtn.style.width = "230px";
     itemBtn.style.height = "25px";
     itemBtn.style.backgroundColor = "#808080";
