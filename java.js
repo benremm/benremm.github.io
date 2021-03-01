@@ -7,8 +7,25 @@ window.onload = function() {
 
 function stackBtn() {
     amount++;
+    //updating height
+    update();
+    //creating stuff lmao
+    createButton()
+}
 
-    holder.style.height = (amount * 30 + 10) + "px";
+function update() {
+    if(amount > 0) {
+        holder.style.height = (amount * 30 + 10) + "px";
+    } else {
+        holder.style.height = "0px";
+    }
+    return;
+}
+
+function createButton() {
+    //Booleans
+    var btnHovering = false;
+
     var itemBtn = document.createElement("button");
     itemBtn.style.position = "relative";
     itemBtn.style.top = "1.5px"
@@ -20,7 +37,27 @@ function stackBtn() {
     itemBtn.style.marginTop = "5px";
     itemBtn.style.marginLeft = "10px";
     itemBtn.style.borderRadius = "5px";
+    itemBtn.style.fontSize = "large";
     itemBtn.innerText = "Item: " + amount;
 
+    itemBtn.onmouseenter = function() {
+        itemBtn.innerHTML = itemBtn.innerHTML.strike();
+        btnHovering = true;
+    }
+
+    itemBtn.onmouseleave = function() { 
+        itemBtn.innerHTML = itemBtn.innerText;
+        btnHovering = false;
+    }
+
+    itemBtn.onclick = function() {
+        if(btnHovering == true) {
+            itemBtn.remove();
+            amount--;
+            update();
+        }
+    }
+
     holder.appendChild(itemBtn);
+    return;
 }
