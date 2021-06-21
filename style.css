@@ -1,0 +1,19 @@
+body {
+background-color:#2759bb;
+}
+
+#stitch {
+position:absolute;
+left: 710;
+top: 200;
+}
+
+#txt {
+position:absolute;
+font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+left:915;
+top:120;
+color: #fff;
+font-size: xx-large;
+font-weight: 550;
+}
